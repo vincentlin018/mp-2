@@ -76,6 +76,7 @@ const DriverPreview = ({driver}: {driver: Driver}) => {
             <h2>{driver.givenName + " " + driver.familyName}</h2>
             <h3>{driver.code}</h3>
             <h3>{driver.permanentNumber}</h3>
+            <h3>{driver.nationality}</h3>
             <p>
                 <StyledLink
                     href={driver.url} target="_blank">
