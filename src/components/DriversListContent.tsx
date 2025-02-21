@@ -26,8 +26,13 @@ const AllDriversDiv = styled.div `
 
 // Styled component for the input container
 const InputDiv = styled.div `
+    font-size: calc(2px + 1vw);
     text-align: center;
     margin: 1rem;
+    label {
+        color: white;
+        margin: 1rem;
+    }
 `;
 
 // Styled component for the main Header
@@ -126,24 +131,26 @@ export default function DriversListContent() {
                 But if you go before 1950 or 2025 the page will give you an error as F1 did not or has not existed during those years.
             </StyledP>
             <InputDiv>
-                <input
-                    type="number"
-                    placeholder="Season Year"
-                    value={year}
-                    onChange={(e) => {
-                        const inputYear = Number(e.target.value);
-                        // Update the year state if input is valid, otherwise keep the previous year in the setYear for its useState hook
-                        setYear(
-                            inputYear >= 1950 && inputYear <= 2025
-                                ? inputYear
-                                : year // Keep the previous valid year if input is invalid
-                        );
-                        // If the year is invalid (not a part of Formula 1 history) Alert the user that it is invalid
-                        if (inputYear < 1950 || inputYear > 2025) {
-                            alert("Invalid year! Please enter a year between 1950 and 2025.");
-                        }
-                    }}
-                />
+                <label>
+                    F1 Season / Year :
+                    <input
+                        id="seasonYear"
+                        type="number"
+                        placeholder="Season Year"
+                        value={year}
+                        onChange={(e) => {
+                            const inputYear = Number(e.target.value);
+                            setYear(
+                                inputYear >= 1950 && inputYear <= 2025
+                                    ? inputYear
+                                    : year
+                            );
+                            if (inputYear < 1950 || inputYear > 2025) {
+                                alert("Invalid year! Please enter a year between 1950 and 2025.");
+                            }
+                        }}
+                    />
+                </label>
             </InputDiv>
             <AllDriversDiv>
                 {
