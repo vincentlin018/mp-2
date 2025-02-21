@@ -125,6 +125,7 @@ export default function DriversListContent() {
                     <li>Name</li>
                     <li>Driver Code (if applicable, older drivers do not have a code)</li>
                     <li>Driver Number (if applicable, older drivers do not have a number on file)</li>
+                    <li>Nationality</li>
                     <li>External Link to Wikipedia Page</li>
                 </ul>
                 <br></br>
